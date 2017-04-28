@@ -19,15 +19,25 @@ body {
   animation-play-state: paused;
 }
 
+.album-cover .loading {
+  width: 200px;
+  height: 200px;
+  background-color: rgb(150, 150, 150);
+  background-color: rgba(150, 150, 150, .8);
+  color: rgb(240, 240, 240);
+  border-radius: 50%;
+  line-height: 200px;
+}
+
 .artist {
   margin-bottom: 5em;
 }
 
-.button-list {
+.icons {
   display: flex;
 }
 
-.button-list i {
+.icons i {
   flex: 1;
 }
 

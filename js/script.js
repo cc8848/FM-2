@@ -21,6 +21,8 @@
   let songName = document.querySelector('.song-name');
   let artist = document.querySelector('.artist');
   let stepForward = document.querySelector('.fa-step-forward');
+  let like = document.querySelector('.fa-heart-o');
+  let loading = document.querySelector('.loading');
   let n = 0;
 
   function loadAlbum(album) {
@@ -44,8 +46,12 @@
     setTimeout(()=>{
       albumCover.style.animation = 'rotate 36s linear infinite';
     }, 1000)
+    like.className = 'fa fa-heart-o fa-3x';
   }
 
+  audio.oncanplay = function() {
+    loading.style.display = 'none';
+  };
   audio.onended = next;
   stepForward.onclick = next;
   albumCover.onclick = function() {
@@ -55,6 +61,14 @@
     } else {
       audio.play();
       this.style.animationPlayState = 'running';
+    }
+  };
+
+  like.onclick = function() {
+    if (this.className === 'fa fa-heart-o fa-3x') {
+      this.className = 'fa fa-heart fa-3x';
+    } else {
+      this.className = 'fa fa-heart-o fa-3x';
     }
   };
 
