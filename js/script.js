@@ -39,13 +39,17 @@
     }
     loadAlbum(albums[n]);
     albumCover.style.animationPlayState = 'running';
+    albumCover.style.animation = 'flip 1s';
     audio.play();
+    setTimeout(()=>{
+      albumCover.style.animation = 'rotate 36s linear infinite';
+    }, 1000)
   }
 
   audio.onended = next;
   stepForward.onclick = next;
   albumCover.onclick = function() {
-    if (this.style.animationPlayState === 'running') {
+    if (this.style.animationPlayState === 'running' || this.style.animationPlayState === 'initial') {
       audio.pause();
       this.style.animationPlayState = 'paused';
     } else {
