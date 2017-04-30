@@ -22,9 +22,8 @@ body {
 .album-cover .loading {
   width: 200px;
   height: 200px;
-  background-color: rgb(150, 150, 150);
-  background-color: rgba(150, 150, 150, .8);
-  color: rgb(240, 240, 240);
+  background-color: rgba(100, 100, 100, .8);
+  color: rgb(200, 200, 200);
   border-radius: 50%;
   line-height: 200px;
 }
@@ -56,4 +55,20 @@ body {
 
 @keyframes flip {
   100% { transform: rotate3d(0, 1, 0, 360deg); }
+}
+
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    max-width: 730px;
+    margin: 5em auto;
+  }
+
+  body > div {
+    flex: 1;
+  }
+
+  .album-cover {
+    margin: 0;
+  }
 }

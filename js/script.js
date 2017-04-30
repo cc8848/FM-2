@@ -1,11 +1,6 @@
 (() => {
   let albums = [
     {
-      "name": "Without You",
-      "artist": "Mariah Carey",
-      "song": "Without You"
-    },
-    {
       "name": "Bury the Hatchet",
       "artist": "The Cranberries",
       "song": "Dying In the Sun"
@@ -14,6 +9,11 @@
        "name": "HIStory",
        "artist": "Michael Jackson",
        "song": "You Are Not Alone"
+     },
+     {
+       "name": "Without You",
+       "artist": "Mariah Carey",
+       "song": "Without You"
      }
    ];
   let audio = document.querySelector('audio');
@@ -26,11 +26,12 @@
   let n = 0;
 
   function loadAlbum(album) {
-   audio.src = `./albums/${album.name}/${album.song}.mp3`;
-   albumCover.style.backgroundImage = `url('./albums/${album.name}/cover.jpg')`;
-   songName.textContent = album.song;
-   document.title = `${album.song} - FM`;
-   artist.textContent = album.artist;
+    loading.style.display = 'block';
+    audio.src = `./albums/${album.name}/${album.song}.mp3`;
+    albumCover.style.backgroundImage = `url('./albums/${album.name}/cover.jpg')`;
+    songName.textContent = album.song;
+    document.title = `${album.song} - FM`;
+    artist.textContent = album.artist;
   }
 
   function next() {
